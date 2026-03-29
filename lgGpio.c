@@ -550,6 +550,7 @@ static int xSetAsPwm(
    {
       if (((p = lgGpioGetTxRec(chip, gpio, LG_TX_PWM)) != NULL) && p->active)
       {
+         xWrite(chip, gpio, 0);
          p->active = 0;
       }
 
@@ -585,6 +586,7 @@ static int xSetAsPwm(
       }
       else
       {
+         xWrite(chip, gpio, 0);
          p->active = 0;
       }
 
@@ -1669,4 +1671,3 @@ void lgGpioSetSamplesFunc(lgGpioAlertsFunc_t cbf, void *userdata)
    lgGpioSamplesFunc = cbf;
    lgGpioSamplesUserdata = userdata;
 }
-

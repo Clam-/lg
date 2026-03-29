@@ -82,3 +82,18 @@ sudo make install
 
 ```
 
+## Docker Build
+
+Use the container runner to build with a known-good Linux toolchain, including
+the packages needed for docs and Python-related artifacts.
+
+```
+./scripts/build-in-docker.sh
+```
+
+By default that runs `make clean all`.  You can also pass a custom command, for
+example:
+
+```
+./scripts/build-in-docker.sh make install
+```
