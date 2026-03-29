@@ -1,6 +1,9 @@
 
 lgpio is a library for Linux Single Board Computers (SBC) which allows control of the General Purpose Input Outputs (GPIO).
 
+### Caution:
+This fork contains commits authored by AI and should not be considered 'safe' unless those commits are verified by someone very knowledgeable with the underlying systems (i.e. not me)
+
 ## Features
 
 * reading and writing GPIO singly and in groups

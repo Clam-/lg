@@ -546,6 +546,17 @@ static int xSetAsPwm(
 
    lgPthTxLock();
 
+   if ((micros_on == 0) && (micros_off == 0))
+   {
+      if (((p = lgGpioGetTxRec(chip, gpio, LG_TX_PWM)) != NULL) && p->active)
+      {
+         p->active = 0;
+      }
+
+      lgPthTxUnlock();
+      return LG_OKAY;
+   }
+
    if (((p = lgGpioGetTxRec(chip, gpio, LG_TX_PWM)) != NULL) && p->active)
    {
       if (micros_on || micros_off)
